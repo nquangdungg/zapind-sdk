@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
+  srcDir: 'docs',
   title: 'Zapind',
   description:
     'SDK Zalo thân thiện với lập trình viên, an toàn kiểu TypeScript và hỗ trợ đối tượng theo ngữ cảnh cho Node.js.',

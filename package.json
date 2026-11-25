@@ -5,9 +5,9 @@
   "description": "Official documentation and landing page for Zapind — Developer-friendly Zalo SDK for Node.js & TypeScript.",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "preview": "vitepress preview docs",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "typecheck": "tsc --noEmit"
   },
   "license": "GPL-3.0-only",
