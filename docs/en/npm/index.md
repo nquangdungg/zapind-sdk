@@ -2,7 +2,7 @@
 
 <PackageSelector />
 
-**Zapind** (`v0.1.0`) is a Zalo SDK for **Node.js (`>= 20.0.0`)** and **TypeScript**, shipped as dual **ESM** and **CommonJS** with bundled `.d.ts` declarations.
+**Zapind** (`v0.1.3`) is a Zalo SDK for **Node.js (`>= 20.0.0`)** and **TypeScript**, shipped as dual **ESM** and **CommonJS** with bundled `.d.ts` declarations.
 
 ## Installation
 
