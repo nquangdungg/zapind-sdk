@@ -1,0 +1,18 @@
+{
+  "name": "zapind-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Official documentation and landing page for Zapind — Developer-friendly Zalo SDK for Node.js & TypeScript.",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitepress": "^1.6.3"
+  }
+}
