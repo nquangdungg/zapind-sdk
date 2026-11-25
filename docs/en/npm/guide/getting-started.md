@@ -62,7 +62,7 @@ await Promise.all([botA.login(), botB.login()]);
 
 ## Next Steps
 
-- [Authentication & Sessions](/en/guide/authentication)
-- [Messaging & Media](/en/guide/messaging)
-- [Realtime Events](/en/guide/events)
-- [API Reference](/en/api/)
+- [Authentication & Sessions](/en/npm/guide/authentication)
+- [Messaging & Media](/en/npm/guide/messaging)
+- [Realtime Events](/en/npm/guide/events)
+- [API Reference](/en/npm/api/)

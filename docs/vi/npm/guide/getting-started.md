@@ -62,7 +62,7 @@ await Promise.all([botA.login(), botB.login()]);
 
 ## Các bước tiếp theo
 
-- [Xác thực & Quản lý phiên](/vi/guide/authentication)
-- [Gửi tin nhắn & Media](/vi/guide/messaging)
-- [Lắng nghe sự kiện thời gian thực](/vi/guide/events)
-- [Tham chiếu API đầy đủ](/vi/api/)
+- [Xác thực & Quản lý phiên](/vi/npm/guide/authentication)
+- [Gửi tin nhắn & Media](/vi/npm/guide/messaging)
+- [Lắng nghe sự kiện thời gian thực](/vi/npm/guide/events)
+- [Tham chiếu API đầy đủ](/vi/npm/api/)

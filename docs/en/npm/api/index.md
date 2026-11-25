@@ -59,4 +59,4 @@ const client = new Zapind({
 
 ## Domain Services & Models
 
-Explore all 9 namespaces in [Domain Services](/en/api/services) and contextual entities in [Models & Types](/en/api/models).
+Explore all 9 namespaces in [Domain Services](/en/npm/api/services) and contextual entities in [Models & Types](/en/npm/api/models).

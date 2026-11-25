@@ -23,4 +23,4 @@ npm run preview
 
 ## License
 
-GNU GPL v3.0
+GNU LGPL v3.0

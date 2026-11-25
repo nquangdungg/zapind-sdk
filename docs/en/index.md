@@ -1,57 +1,61 @@
 ---
 layout: home
-title: Zapind — Developer-Friendly Zalo SDK for Node.js & TypeScript
+title: Zapind — Zalo SDK for Node.js & Python
 titleTemplate: false
 
 hero:
   name: Zapind
-  text: Modern, Type-Safe Zalo SDK for Node.js & TypeScript
-  tagline: Domain-oriented API, automatic threadType resolution, contextual objects, built-in session stores, and realtime events.
+  text: Modern Zalo SDK for Node.js (npm) & Python (PyPI)
+  tagline: Domain-oriented API, automatic ThreadType resolution, contextual models, built-in session stores, and realtime events.
   image:
     src: /logo.svg
     alt: Zapind Logo
   actions:
     - theme: brand
-      text: Get Started
-      link: /en/guide/getting-started
+      text: npm Docs (JS/TS)
+      link: /en/npm/guide/getting-started
     - theme: alt
-      text: API Reference
-      link: /en/api/
+      text: PyPI Docs (Python)
+      link: /en/python/guide/getting-started
     - theme: alt
       text: GitHub
       link: https://github.com/nquangdungg/zapind
 
 features:
   - icon: 🧩
-    title: Clean Domain API
-    details: Organized into 9 intuitive namespaces — account, users, contacts, groups, conversations, messages, media, settings, and events — plus client.raw for low-level control.
+    title: Consistent 9-Domain API
+    details: Shared architecture across Node.js and Python with account, users, contacts, groups, conversations, messages, media, settings, and events.
   - icon: 🎯
     title: Contextual Models
-    details: Call user.send(), group.send(), conversation.send(), message.reply(), and message.react() directly without repeating thread IDs or threadType.
+    details: Call user.send(), group.send(), conversation.send(), message.reply(), and message.react() directly without repeating IDs or ThreadType.
   - icon: 🔐
-    title: Built-in Session Management
-    details: Ships with MemorySessionStore, FileSessionStore (atomic writes), and EncryptedFileSessionStore (AES-256-GCM) with automatic session restore and QR fallback.
+    title: Built-in Session Stores
+    details: Ships with MemorySessionStore, FileSessionStore (atomic writes), and EncryptedFileSessionStore (AES-256-GCM) with automatic session restore.
   - icon: ⚡
     title: Multi-Listener Realtime Events
-    details: Typed event bus for message, reaction, group.update, user.update, typing, seen, undo, auth.required, connected, disconnected, and error with per-handler error isolation.
+    details: Typed event bus for message, reaction, group.update, user.update, typing, seen, undo, auth.required, connected, disconnected, and error.
   - icon: 🛡️
-    title: Strict TypeScript & Typed Errors
-    details: Written in strict TypeScript, shipped as dual ESM & CommonJS with full .d.ts definitions and a 9-class ZapindError hierarchy.
+    title: Strict Typing & Typed Errors
+    details: Strict TypeScript (.d.ts) for npm and PEP 561 py.typed type hints for PyPI, sharing the 9-class ZapindError hierarchy.
   - icon: 🚀
     title: Caching & Built-in Resilience
-    details: Bounded TTLCache, concurrent in-flight request deduplication, request timeouts, controlled retries, token-bucket rate limiting, and RedactingLogger.
+    details: Bounded TTLCache, concurrent in-flight deduplication, request timeouts, controlled retries, rate limiting, and RedactingLogger.
 ---
+
+<div class="zapind-selector-banner">
+  <strong>Select package ecosystem:</strong>
+  <PackageSelector />
+</div>
 
 <div class="zapind-landing-preview">
 
-## Install and run in minutes
+## Quick install (npm — JavaScript / TypeScript)
 
 <div class="zapind-meta-strip">
   <span class="zapind-meta-pill">zapind v0.1.0</span>
   <span class="zapind-meta-pill">Node.js &gt;= 20</span>
   <span class="zapind-meta-pill">ESM &amp; CommonJS</span>
-  <span class="zapind-meta-pill">TypeScript Strict</span>
-  <span class="zapind-meta-pill">GNU GPL v3.0</span>
+  <span class="zapind-meta-pill">GNU LGPL v3.0</span>
 </div>
 
 ```bash

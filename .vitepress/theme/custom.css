@@ -39,9 +39,84 @@
   border-color: var(--vp-c-brand-1);
 }
 
+/* Package Selector (npm / PyPI) */
+.zapind-pkg-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.zapind-pkg-selector--compact {
+  margin-right: 12px;
+  padding: 3px;
+}
+
+.zapind-pkg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.zapind-pkg-selector--compact .zapind-pkg-btn {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+}
+
+.zapind-pkg-btn:hover {
+  color: var(--vp-c-text-1);
+}
+
+.zapind-pkg-btn.is-active {
+  background: var(--vp-c-brand-1);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 104, 255, 0.25);
+}
+
+.zapind-pkg-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.zapind-pkg-dot--npm {
+  background: #cb3837;
+}
+
+.zapind-pkg-dot--pypi {
+  background: #3776ab;
+}
+
+.zapind-pkg-btn.is-active .zapind-pkg-dot {
+  background: #ffffff;
+}
+
+.zapind-selector-banner {
+  max-width: 1152px;
+  margin: 24px auto 0;
+  padding: 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .zapind-landing-preview {
   max-width: 1152px;
-  margin: 48px auto 0;
+  margin: 40px auto 0;
   padding: 0 24px;
 }
 
@@ -72,8 +147,12 @@
 }
 
 @media (max-width: 640px) {
-  .zapind-landing-preview {
-    margin-top: 32px;
+  .zapind-landing-preview,
+  .zapind-selector-banner {
     padding: 0 16px;
+  }
+
+  .zapind-pkg-selector--compact {
+    margin-right: 6px;
   }
 }

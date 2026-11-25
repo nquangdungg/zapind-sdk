@@ -59,4 +59,4 @@ const client = new Zapind({
 
 ## Các Domain Services
 
-Xem chi tiết 9 miền API tại [Domain Services](/vi/api/services) và các thực thể có ngữ cảnh tại [Models & Kiểu dữ liệu](/vi/api/models).
+Xem chi tiết 9 miền API tại [Domain Services](/vi/npm/api/services) và các thực thể có ngữ cảnh tại [Models & Kiểu dữ liệu](/vi/npm/api/models).
