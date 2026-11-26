@@ -8,7 +8,7 @@ Khi gọi `await client.login(options?)`:
 
 1. Nếu bạn truyền `options.credentials`, SDK đăng nhập trực tiếp bằng bộ thông tin phiên đó.
 2. Nếu không truyền `credentials` và không bật `forceQR: true`, SDK tự đọc phiên từ `SessionStore` để khôi phục và xác thực.
-3. Nếu chưa có phiên hoặc phiên đã hết hạn, SDK phát sự kiện `'auth.required'` (kèm lý do `'no_session'` hoặc `'session_expired'`) và tự động chuyển sang luồng quét mã QR.
+3. Nếu chưa có phiên hoặc phiên đã hết hạn, SDK phát sự kiện `'auth.required'` (kèm lý do `'no_session'` hoặc `'session_expired'`) và tự động chuyển sang luồng quét mã QR — trừ khi bật `sessionOnly: true`, khi đó `login()` sẽ ném ngay `SessionError` mà không chờ quét QR.
 4. Sau khi đăng nhập thành công, SDK tự lưu phiên mới xuống `SessionStore`.
 
 ```ts
@@ -29,6 +29,22 @@ const session = await client.login({
 });
 
 console.log('Tài khoản:', session.accountId, session.displayName);
+```
+
+### Khởi động chỉ khôi phục phiên (`sessionOnly: true`)
+
+Phù hợp cho web server hoặc dịch vụ chạy nền muốn tự khôi phục phiên đã lưu lúc khởi động mà không bị chặn chờ QR trong 180 giây:
+
+```ts
+import { Zapind, SessionError } from 'zapind';
+
+try {
+  await client.login({ sessionOnly: true });
+} catch (err) {
+  if (err instanceof SessionError) {
+    console.log('Chưa có phiên hợp lệ — chờ người dùng chủ động quét QR.');
+  }
+}
 ```
 
 ## Các bộ lưu phiên tích hợp sẵn

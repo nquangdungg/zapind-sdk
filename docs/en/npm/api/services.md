@@ -59,7 +59,8 @@ Backed by `TTLCache`, in-flight deduplication, and automatic cache invalidation 
 | Method | Parameters | Return Type |
 |---|---|---|
 | `get(id, threadType?)` | `id: string`, `threadType?: ThreadType` | `Promise<Conversation>` |
-| `getMessages(conversationId, count?)` | `conversationId: string`, `count?: number` | `Promise<MessagePage>` |
+| `getMessages(conversationId, options?)` | `conversationId: string`, `options?: number \| GetMessagesOptions` | `Promise<MessagePage>` |
+| `requestOldMessages(threadType, lastMsgId?)` | `threadType: ThreadType`, `lastMsgId?: string \| null` | `void` |
 | `getPinned()` | — | `Promise<PinnedConversations>` |
 | `getUnread()` | — | `Promise<UnreadMarks>` |
 | `pin(target, pinned?)` | `target: ThreadTarget`, `pinned?: boolean` | `Promise<void>` |
@@ -67,7 +68,7 @@ Backed by `TTLCache`, in-flight deduplication, and automatic cache invalidation 
 | `sendTyping(target)` | `target: ThreadTarget` | `Promise<void>` |
 
 ::: info Conversation History Scope
-`conversations.getMessages()` supports group chat history. Dedicated REST history pagination for 1-on-1 direct messages is not currently provided.
+`conversations.getMessages()` fetches cloud chat history for **group** conversations with cursor pagination (`{ count?, cursor?, isOld? }`). For 1-on-1 direct messages (and WebSocket backfill for groups), listen to `'old_messages'` and call `conversations.requestOldMessages(ThreadType.User)`.
 :::
 
 ## `client.messages`
@@ -97,4 +98,4 @@ Backed by `TTLCache`, in-flight deduplication, and automatic cache invalidation 
 
 ## `client.events`
 
-Exposes `on`, `once`, `off`, `start`, and `stop` mirroring the top-level event methods on `Zapind`.
+Exposes `on`, `once`, `off`, `start`, `stop`, and `requestOldMessages` mirroring the top-level event methods and historical WebSocket sync on `Zapind`.

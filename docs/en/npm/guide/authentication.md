@@ -8,7 +8,7 @@ When you call `await client.login(options?)`:
 
 1. If `options.credentials` is provided, Zapind authenticates directly with those credentials.
 2. Otherwise (unless `forceQR: true`), Zapind attempts to load and validate a saved session from your `SessionStore`.
-3. If no session exists or the saved session expired, Zapind emits `'auth.required'` (`'no_session'` or `'session_expired'`) and automatically starts QR login.
+3. If no session exists or the saved session expired, Zapind emits `'auth.required'` (`'no_session'` or `'session_expired'`) and automatically starts QR login — unless `sessionOnly: true` is passed, in which case `login()` immediately throws `SessionError` without starting QR login.
 4. Once authenticated, Zapind persists the updated session to your `SessionStore`.
 
 ```ts
@@ -29,6 +29,22 @@ const session = await client.login({
 });
 
 console.log('Account:', session.accountId, session.displayName);
+```
+
+### Restore-Only Startup (`sessionOnly: true`)
+
+For background services and web servers that should restore a saved session on boot without blocking on a 3-minute QR prompt:
+
+```ts
+import { Zapind, SessionError } from 'zapind';
+
+try {
+  await client.login({ sessionOnly: true });
+} catch (err) {
+  if (err instanceof SessionError) {
+    console.log('No valid saved session — waiting for user-initiated QR login.');
+  }
+}
 ```
 
 ## Built-in Session Stores

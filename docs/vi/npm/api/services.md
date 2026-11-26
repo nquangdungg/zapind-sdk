@@ -59,15 +59,16 @@ Tích hợp `TTLCache`, gộp yêu cầu đồng thời và tự động vô hi�
 | Phương thức | Tham số | Giá trị trả về |
 |---|---|---|
 | `get(id, threadType?)` | `id: string`, `threadType?: ThreadType` | `Promise<Conversation>` |
-| `getMessages(conversationId, count?)` | `conversationId: string`, `count?: number` | `Promise<MessagePage>` |
+| `getMessages(conversationId, options?)` | `conversationId: string`, `options?: number \| GetMessagesOptions` | `Promise<MessagePage>` |
+| `requestOldMessages(threadType, lastMsgId?)` | `threadType: ThreadType`, `lastMsgId?: string \| null` | `void` |
 | `getPinned()` | — | `Promise<PinnedConversations>` |
 | `getUnread()` | — | `Promise<UnreadMarks>` |
 | `pin(target, pinned?)` | `target: ThreadTarget`, `pinned?: boolean` | `Promise<void>` |
 | `mute(target, durationSeconds)` | `target: ThreadTarget`, `durationSeconds: number` | `Promise<void>` |
 | `sendTyping(target)` | `target: ThreadTarget` | `Promise<void>` |
 
-::: info Giới hạn lịch sử hội thoại
-`conversations.getMessages()` hiện hỗ trợ đọc lịch sử tin nhắn nhóm. Thư viện chưa cung cấp endpoint REST đọc lịch sử tin nhắn DM 1-1 riêng theo `userId`.
+::: info Phạm vi lịch sử hội thoại
+`conversations.getMessages()` tải lịch sử tin nhắn đám mây cho **hội thoại nhóm** kèm phân trang theo cursor (`{ count?, cursor?, isOld? }`). Với tin nhắn cá nhân 1-1 (hoặc đồng bộ bổ sung cho nhóm), hãy lắng nghe sự kiện `'old_messages'` và gọi `conversations.requestOldMessages(ThreadType.User)`.
 :::
 
 ## `client.messages`
@@ -97,4 +98,4 @@ Tích hợp `TTLCache`, gộp yêu cầu đồng thời và tự động vô hi�
 
 ## `client.events`
 
-Cung cấp `on`, `once`, `off`, `start`, `stop` tương ứng với các phương thức sự kiện trên `Zapind`.
+Cung cấp `on`, `once`, `off`, `start`, `stop` và `requestOldMessages` tương ứng với các phương thức sự kiện và đồng bộ tin nhắn cũ qua WebSocket trên `Zapind`.

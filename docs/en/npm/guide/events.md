@@ -18,13 +18,14 @@ unsubscribe();
 client.stopListening();
 ```
 
-You can also use the equivalent `client.events` namespace (`on`, `once`, `off`, `start`, `stop`).
+You can also use the equivalent `client.events` namespace (`on`, `once`, `off`, `start`, `stop`, `requestOldMessages`). Stopping and restarting the listener safely detaches underlying socket callbacks to prevent duplicate handlers.
 
 ## Supported Events
 
 | Event Name | Payload Type | Description |
 |---|---|---|
 | `message` | `Message` | Incoming message (self messages are filtered unless `selfListen: true`). |
+| `old_messages` | `OldMessagesEvent` | Historical message batch delivered over WebSocket after calling `conversations.requestOldMessages()` or `events.requestOldMessages()`. |
 | `reaction` | `ReactionEvent` | Reaction added to a message. |
 | `group.update` | `GroupUpdateEvent` | Group membership or metadata change (automatically invalidates group cache). |
 | `user.update` | `UserUpdateEvent` | Friend or user update (automatically invalidates user cache). |
@@ -35,6 +36,21 @@ You can also use the equivalent `client.events` namespace (`on`, `once`, `off`, 
 | `connected` | `ConnectionEvent` | Realtime socket connected. |
 | `disconnected` | `ConnectionEvent` | Realtime socket closed with `code` and `reason`. |
 | `error` | `ZapindError` | Error emitted by the realtime listener. |
+
+## Syncing Historical Messages Over WebSocket
+
+```ts
+import { ThreadType } from 'zapind';
+
+client.on('old_messages', ({ messages, threadType }) => {
+  console.log(`Synced ${messages.length} messages for threadType=${threadType}`);
+});
+
+client.on('connected', () => {
+  client.conversations.requestOldMessages(ThreadType.User);
+  client.conversations.requestOldMessages(ThreadType.Group);
+});
+```
 
 ## Listening to Multiple Events
 

@@ -28,7 +28,7 @@ Thuộc tính: `id`, `name`, `description`, `type` (`GroupType`), `creatorId`, `
 
 Phương thức:
 - `group.send(content: SendMessageContent): Promise<SendMessageReceipt>`
-- `group.getMessages(count?: number): Promise<MessagePage>`
+- `group.getMessages(options?: number | GetMessagesOptions): Promise<MessagePage>`
 - `group.addMembers(userIds: readonly string[]): Promise<void>`
 - `group.removeMembers(userIds: readonly string[]): Promise<void>`
 - `group.rename(name: string): Promise<void>`
@@ -39,13 +39,13 @@ Thuộc tính: `id`, `threadType`, `isGroup`.
 
 Phương thức:
 - `conversation.send(content: SendMessageContent): Promise<SendMessageReceipt>`
-- `conversation.getMessages(count?: number): Promise<MessagePage>`
+- `conversation.getMessages(options?: number | GetMessagesOptions): Promise<MessagePage>` *(chỉ hỗ trợ hội thoại nhóm; ném `ValidationError` với `ThreadType.User` — dùng `'old_messages'` + `conversations.requestOldMessages(ThreadType.User)` cho DM)*
 - `conversation.sendTyping(): Promise<void>`
 - `conversation.pin(pinned?: boolean): Promise<void>`
 - `conversation.mute(durationSeconds: number): Promise<void>`
 
 ### `Message`
-Thuộc tính: `id`, `clientMsgId`, `threadId`, `threadType`, `isGroup`, `sender` (`{ id, name? }`), `recipientId`, `isSelf`, `msgType`, `text`, `attachments`, `mentions`, `replyTo?`, `timestamp` (`Date`), `ttlMs`, `conversation` (`Conversation`).
+Thuộc tính: `id`, `clientMsgId`, `threadId`, `threadType`, `isGroup`, `sender` (`{ id, name? }`), `recipientId`, `isSelf`, `msgType`, `text`, `attachments`, `mentions`, `replyTo?` (`MessageQuote`, gồm cả `senderName?`), `timestamp` (`Date`), `ttlMs`, `conversation` (`Conversation`).
 
 Phương thức:
 - `message.reply(content: SendMessageContent): Promise<SendMessageReceipt>`
@@ -53,6 +53,10 @@ Phương thức:
 - `message.undo(): Promise<void>`
 - `message.delete(onlyMe?: boolean): Promise<void>`
 - `message.markSeen(): Promise<void>`
+
+### `MessagePage` & `GetMessagesOptions`
+- `GetMessagesOptions`: `{ count?: number; cursor?: string | null; isOld?: boolean }`
+- `MessagePage`: `{ items: readonly Message[]; hasMore: boolean; nextCursor: string | null; isOld?: boolean }`
 
 ## Enums được xuất công khai
 

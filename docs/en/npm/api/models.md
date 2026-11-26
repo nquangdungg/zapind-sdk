@@ -28,7 +28,7 @@ Properties: `id`, `name`, `description`, `type` (`GroupType`), `creatorId`, `ava
 
 Methods:
 - `group.send(content: SendMessageContent): Promise<SendMessageReceipt>`
-- `group.getMessages(count?: number): Promise<MessagePage>`
+- `group.getMessages(options?: number | GetMessagesOptions): Promise<MessagePage>`
 - `group.addMembers(userIds: readonly string[]): Promise<void>`
 - `group.removeMembers(userIds: readonly string[]): Promise<void>`
 - `group.rename(name: string): Promise<void>`
@@ -39,13 +39,13 @@ Properties: `id`, `threadType`, `isGroup`.
 
 Methods:
 - `conversation.send(content: SendMessageContent): Promise<SendMessageReceipt>`
-- `conversation.getMessages(count?: number): Promise<MessagePage>`
+- `conversation.getMessages(options?: number | GetMessagesOptions): Promise<MessagePage>` *(group conversations only; throws `ValidationError` for `ThreadType.User` — use `'old_messages'` + `conversations.requestOldMessages(ThreadType.User)` for DMs)*
 - `conversation.sendTyping(): Promise<void>`
 - `conversation.pin(pinned?: boolean): Promise<void>`
 - `conversation.mute(durationSeconds: number): Promise<void>`
 
 ### `Message`
-Properties: `id`, `clientMsgId`, `threadId`, `threadType`, `isGroup`, `sender` (`{ id, name? }`), `recipientId`, `isSelf`, `msgType`, `text`, `attachments`, `mentions`, `replyTo?`, `timestamp` (`Date`), `ttlMs`, `conversation` (`Conversation`).
+Properties: `id`, `clientMsgId`, `threadId`, `threadType`, `isGroup`, `sender` (`{ id, name? }`), `recipientId`, `isSelf`, `msgType`, `text`, `attachments`, `mentions`, `replyTo?` (`MessageQuote`, including optional `senderName?`), `timestamp` (`Date`), `ttlMs`, `conversation` (`Conversation`).
 
 Methods:
 - `message.reply(content: SendMessageContent): Promise<SendMessageReceipt>`
@@ -53,6 +53,10 @@ Methods:
 - `message.undo(): Promise<void>`
 - `message.delete(onlyMe?: boolean): Promise<void>`
 - `message.markSeen(): Promise<void>`
+
+### `MessagePage` & `GetMessagesOptions`
+- `GetMessagesOptions`: `{ count?: number; cursor?: string | null; isOld?: boolean }`
+- `MessagePage`: `{ items: readonly Message[]; hasMore: boolean; nextCursor: string | null; isOld?: boolean }`
 
 ## Exported Enums
 
