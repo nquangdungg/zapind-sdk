@@ -47,6 +47,7 @@ const client = new Zapind({
 |---|---|---|
 | `login(options?: LoginOptions)` | `Promise<SessionInfo>` | Restores saved session or starts QR login automatically. |
 | `logout(options?: LogoutOptions)` | `Promise<void>` | Stops listener, disconnects, clears caches, and optionally clears local session store. |
+| `destroy(options?: LogoutOptions)` | `Promise<void>` | Full teardown: stops listener, disconnects, clears caches, removes all event listeners, and optionally clears local session (`clearSession` defaults to `false`). |
 | `getStatus()` | `ClientStatus` | Current client lifecycle status. |
 | `getSession()` | `SessionInfo \| null` | Safe session metadata (excludes cookies and IMEI). |
 | `isAuthenticated()` | `boolean` | Whether the client is currently authenticated and connected. |

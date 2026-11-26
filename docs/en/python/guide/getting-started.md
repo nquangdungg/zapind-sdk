@@ -1,6 +1,6 @@
 # Quick Start (Python)
 
-**Zapind** (`v0.1.0`) provides an idiomatic `asyncio` Python API using `snake_case`, `async with Zapind(...) as client:`, contextual models, and full PEP 561 type hints (`py.typed`).
+**Zapind** (`v1.0.0`) provides an idiomatic `asyncio` Python API using `snake_case`, `async with Zapind(...) as client:`, contextual models, and full PEP 561 type hints (`py.typed`).
 
 ## Requirements
 

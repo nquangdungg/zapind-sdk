@@ -43,6 +43,7 @@ client = Zapind(
 |---|---|---|
 | `await login(...)` | `SessionInfo` | Khôi phục phiên hoặc đăng nhập QR. |
 | `await logout(clear_session=True)` | `None` | Ngắt kết nối, xóa cache và tùy chọn xóa phiên cục bộ. |
+| `await destroy(clear_session=False)` | `None` | Giải phóng toàn bộ client: ngắt kết nối, xóa cache, gỡ toàn bộ event listener và tùy chọn xóa phiên cục bộ. |
 | `get_status()` | `ClientStatus` | Trạng thái hiện tại. |
 | `get_session()` | `SessionInfo \| None` | Metadata phiên an toàn. |
 | `is_authenticated()` | `bool` | Kiểm tra trạng thái xác thực. |

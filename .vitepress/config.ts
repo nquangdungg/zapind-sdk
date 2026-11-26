@@ -48,7 +48,7 @@ export default defineConfig({
         nav: [
           { text: 'npm (JS/TS)', link: '/vi/npm/', activeMatch: '/vi/npm/' },
           { text: 'PyPI (Python)', link: '/vi/python/', activeMatch: '/vi/python/' },
-          { text: 'v0.1.3', link: 'https://github.com/nquangdungg/zapind' },
+          { text: 'v1.0.0', link: 'https://github.com/nquangdungg/zapind' },
         ],
         sidebar: {
           '/vi/npm/': [
@@ -128,7 +128,7 @@ export default defineConfig({
         nav: [
           { text: 'npm (JS/TS)', link: '/en/npm/', activeMatch: '/en/npm/' },
           { text: 'PyPI (Python)', link: '/en/python/', activeMatch: '/en/python/' },
-          { text: 'v0.1.3', link: 'https://github.com/nquangdungg/zapind' },
+          { text: 'v1.0.0', link: 'https://github.com/nquangdungg/zapind' },
         ],
         sidebar: {
           '/en/npm/': [

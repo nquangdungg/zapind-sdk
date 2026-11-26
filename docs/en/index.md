@@ -52,7 +52,7 @@ features:
 ## Quick install (npm — JavaScript / TypeScript)
 
 <div class="zapind-meta-strip">
-  <span class="zapind-meta-pill">zapind v0.1.3</span>
+  <span class="zapind-meta-pill">zapind v1.0.0</span>
   <span class="zapind-meta-pill">Node.js &gt;= 20</span>
   <span class="zapind-meta-pill">ESM &amp; CommonJS</span>
   <span class="zapind-meta-pill">GNU LGPL v3.0</span>

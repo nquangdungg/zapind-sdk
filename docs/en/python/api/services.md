@@ -11,7 +11,7 @@ Every `Zapind` instance exposes 9 domain services using Python `snake_case`.
 
 ## `client.users`
 - `await get(user_id: str, *, skip_cache: bool = False) -> User | None`
-- `await get_many(user_ids: list[str]) -> dict[str, User]`
+- `await get_many(user_ids: list[str], *, skip_cache: bool = False) -> dict[str, User]`
 - `await find_by_phone(phone_number: str) -> User | None`
 - `await find_by_username(username: str) -> User | None`
 - `await get_last_online(user_id: str) -> LastOnlineInfo`
@@ -30,7 +30,7 @@ Every `Zapind` instance exposes 9 domain services using Python `snake_case`.
 ## `client.groups`
 - `await list() -> list[GroupSummary]`
 - `await get(group_id: str, *, skip_cache: bool = False) -> Group`
-- `await get_many(group_ids: list[str]) -> dict[str, Group]`
+- `await get_many(group_ids: list[str], *, skip_cache: bool = False) -> dict[str, Group]`
 - `await create(*, members: list[str], name: str | None = None) -> Group`
 - `await get_members(member_ids: list[str]) -> list[GroupMember]`
 - `await add_members(group_id: str, user_ids: list[str]) -> None`
@@ -43,9 +43,9 @@ Every `Zapind` instance exposes 9 domain services using Python `snake_case`.
 - `await get_messages(conversation_id: str, count: int | None = None) -> MessagePage`
 - `await get_pinned() -> PinnedConversations`
 - `await get_unread() -> UnreadMarks`
-- `await pin(target: ThreadTarget, pinned: bool = True) -> None`
-- `await mute(target: ThreadTarget, duration_seconds: int) -> None`
-- `await send_typing(target: ThreadTarget) -> None`
+- `await pin(target: ThreadTarget, pinned: bool = True, thread_type: ThreadType | None = None) -> None`
+- `await mute(target: ThreadTarget, duration_seconds: int, thread_type: ThreadType | None = None) -> None`
+- `await send_typing(target: ThreadTarget, thread_type: ThreadType | None = None) -> None`
 
 ## `client.messages`
 - `await send(target: ThreadTarget, content: SendMessageContent, *, thread_type: ThreadType | None = None) -> SendMessageReceipt`

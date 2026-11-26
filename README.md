@@ -1,6 +1,6 @@
 # Zapind Documentation Site
 
-Official documentation and landing page for **Zapind** (`v0.1.0`) — built with VitePress.
+Official documentation and landing page for **Zapind** (`v1.0.0` — npm & PyPI) — built with VitePress.
 
 - Vietnamese docs: `/vi/`
 - English docs: `/en/`

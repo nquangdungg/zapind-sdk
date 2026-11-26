@@ -47,6 +47,7 @@ const client = new Zapind({
 |---|---|---|
 | `login(options?: LoginOptions)` | `Promise<SessionInfo>` | Khôi phục phiên hoặc đăng nhập QR tự động. |
 | `logout(options?: LogoutOptions)` | `Promise<void>` | Dừng lắng nghe, ngắt kết nối, xóa cache và tùy chọn xóa phiên cục bộ. |
+| `destroy(options?: LogoutOptions)` | `Promise<void>` | Giải phóng toàn bộ client: dừng lắng nghe, ngắt kết nối, xóa cache, gỡ toàn bộ event listener và tùy chọn xóa phiên (`clearSession` mặc định là `false`). |
 | `getStatus()` | `ClientStatus` | Trạng thái hiện tại của client. |
 | `getSession()` | `SessionInfo \| null` | Thông tin phiên an toàn (không chứa cookie/IMEI). |
 | `isAuthenticated()` | `boolean` | Kiểm tra client đã kết nối và xác thực hay chưa. |

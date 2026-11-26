@@ -1,6 +1,6 @@
 # Quick Start
 
-**Zapind** (`v0.1.3`) is a Node.js and TypeScript SDK for interacting with Zalo accounts through a domain-oriented API, contextual models, and a typed realtime event bus.
+**Zapind** (`v1.0.0`) is a Node.js and TypeScript SDK for interacting with Zalo accounts through a domain-oriented API, contextual models, and a typed realtime event bus.
 
 ## Requirements
 

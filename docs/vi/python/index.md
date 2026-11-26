@@ -2,7 +2,7 @@
 
 <PackageSelector />
 
-**Zapind** (`v0.1.0`) là bộ SDK Zalo bất đồng bộ (`asyncio`) và đầy đủ type hints (`PEP 561 py.typed`) dành cho **Python (`>= 3.10`)**.
+**Zapind** (`v1.0.0`) là bộ SDK Zalo bất đồng bộ (`asyncio`) và đầy đủ type hints (`PEP 561 py.typed`) dành cho **Python (`>= 3.10`)**.
 
 ## Cài đặt
 

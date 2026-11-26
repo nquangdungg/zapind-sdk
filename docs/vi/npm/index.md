@@ -2,7 +2,7 @@
 
 <PackageSelector />
 
-**Zapind** (`v0.1.3`) là bộ SDK Zalo dành cho **Node.js (`>= 20.0.0`)** và **TypeScript**, phát hành song song dạng **ESM** và **CommonJS** kèm đầy đủ tệp khai báo kiểu `.d.ts`.
+**Zapind** (`v1.0.0`) là bộ SDK Zalo dành cho **Node.js (`>= 20.0.0`)** và **TypeScript**, phát hành song song dạng **ESM** và **CommonJS** kèm đầy đủ tệp khai báo kiểu `.d.ts`.
 
 ## Cài đặt
 

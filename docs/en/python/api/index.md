@@ -43,6 +43,7 @@ client = Zapind(
 |---|---|---|
 | `await login(...)` | `SessionInfo` | Restores saved session or runs QR login. |
 | `await logout(clear_session=True)` | `None` | Disconnects, clears caches, and optionally clears local session store. |
+| `await destroy(clear_session=False)` | `None` | Full teardown: disconnects, clears caches, removes all event listeners, and optionally clears local session store. |
 | `get_status()` | `ClientStatus` | Current lifecycle status. |
 | `get_session()` | `SessionInfo \| None` | Safe session metadata. |
 | `is_authenticated()` | `bool` | Whether the client is authenticated and connected. |

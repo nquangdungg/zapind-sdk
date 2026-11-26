@@ -19,7 +19,7 @@ Backed by `TTLCache` and concurrent in-flight request deduplication for `get()`.
 | Method | Parameters | Return Type |
 |---|---|---|
 | `get(userId, options?)` | `userId: string`, `options?: { skipCache?: boolean }` | `Promise<User \| null>` |
-| `getMany(userIds)` | `userIds: readonly string[]` | `Promise<Record<string, User>>` |
+| `getMany(userIds, options?)` | `userIds: readonly string[]`, `options?: { skipCache?: boolean }` | `Promise<Record<string, User>>` |
 | `findByPhone(phoneNumber)` | `phoneNumber: string` | `Promise<User \| null>` |
 | `findByUsername(username)` | `username: string` | `Promise<User \| null>` |
 | `getLastOnline(userId)` | `userId: string` | `Promise<LastOnlineInfo>` |
@@ -46,7 +46,7 @@ Backed by `TTLCache`, in-flight deduplication, and automatic cache invalidation 
 |---|---|---|
 | `list()` | — | `Promise<GroupSummary[]>` |
 | `get(groupId, options?)` | `groupId: string`, `options?: { skipCache?: boolean }` | `Promise<Group>` |
-| `getMany(groupIds)` | `groupIds: readonly string[]` | `Promise<Record<string, Group>>` |
+| `getMany(groupIds, options?)` | `groupIds: readonly string[]`, `options?: { skipCache?: boolean }` | `Promise<Record<string, Group>>` |
 | `create(options)` | `{ name?: string; members: readonly string[] }` | `Promise<Group>` |
 | `getMembers(memberIds)` | `memberIds: readonly string[]` | `Promise<GroupMember[]>` |
 | `addMembers(groupId, userIds)` | `groupId: string`, `userIds: readonly string[]` | `Promise<void>` |

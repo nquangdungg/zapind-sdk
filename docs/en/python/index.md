@@ -2,7 +2,7 @@
 
 <PackageSelector />
 
-**Zapind** (`v0.1.0`) is an async-first (`asyncio`), fully typed (`PEP 561 py.typed`) Zalo SDK for **Python (`>= 3.10`)**.
+**Zapind** (`v1.0.0`) is an async-first (`asyncio`), fully typed (`PEP 561 py.typed`) Zalo SDK for **Python (`>= 3.10`)**.
 
 ## Installation
 

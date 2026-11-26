@@ -1,6 +1,6 @@
 # Bắt đầu nhanh
 
-**Zapind** (`v0.1.3`) là bộ SDK dành cho Node.js và TypeScript giúp ứng dụng của bạn tương tác với tài khoản Zalo thông qua API hướng miền, đối tượng có ngữ cảnh và hệ thống sự kiện thời gian thực.
+**Zapind** (`v1.0.0`) là bộ SDK dành cho Node.js và TypeScript giúp ứng dụng của bạn tương tác với tài khoản Zalo thông qua API hướng miền, đối tượng có ngữ cảnh và hệ thống sự kiện thời gian thực.
 
 ## Yêu cầu môi trường
 

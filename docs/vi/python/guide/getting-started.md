@@ -1,6 +1,6 @@
 # Bắt đầu nhanh (Python)
 
-**Zapind** (`v0.1.0`) cung cấp giao diện `asyncio` chuẩn Python với quy ước `snake_case`, hỗ trợ `async with Zapind(...) as client:`, đối tượng có ngữ cảnh và đầy đủ type hints (`py.typed`).
+**Zapind** (`v1.0.0`) cung cấp giao diện `asyncio` chuẩn Python với quy ước `snake_case`, hỗ trợ `async with Zapind(...) as client:`, đối tượng có ngữ cảnh và đầy đủ type hints (`py.typed`).
 
 ## Yêu cầu môi trường
 
